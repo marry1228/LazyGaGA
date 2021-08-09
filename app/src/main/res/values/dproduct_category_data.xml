@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <string-array name="dproduct_category">
+
+    <item>소파 조립</item>
+    <item>서랍 조립</item>
+    <item>책상 조립</item>
+    <item>의자 조립</item>
+    <item>tv 설치</item>
+    <item>pc 설치</item>
+
+    </string-array>
+
+</resources>

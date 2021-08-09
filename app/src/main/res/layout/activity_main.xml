@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:gravity="center"
+        android:layout_weight="0.5">
+
+    <TextView
+        android:id="@+id/tvbtn_main_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="0.5"
+        >
+        <ImageButton
+            android:id="@+id/main_btnHaezzo"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/btn_haezzo"
+            android:scaleType="centerCrop"
+            android:background="@android:color/transparent"
+            />
+        <ImageButton
+            android:id="@+id/main_btnHaezulgae"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/btn_haezulgae"
+            android:scaleType="centerCrop"
+            android:background="@android:color/transparent"
+            />
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/main_ad"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:text="여러분들의 \n기술을 뽐내 보세요"
+        android:backgroundTint="#404040"
+        android:textColor="#FFFFCD00"
+        android:textSize="15dp"
+        />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="2"
+        android:gravity="center"
+        >
+
+        <ImageButton
+            android:id="@+id/btnmain1"
+            android:layout_width="0px"
+            android:layout_height="150dp"
+            android:layout_weight="1"
+            android:src="@drawable/main1"
+            android:scaleType="centerCrop"
+            />
+
+        <ImageButton
+            android:id="@+id/btnmain2"
+            android:layout_width="0px"
+            android:layout_height="150dp"
+            android:layout_weight="1"
+            android:src="@drawable/main2"
+            android:scaleType="centerCrop"
+            />ㅡㅁ
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        android:gravity="center"
+        >
+        <Button
+            android:id="@+id/main_writeDocument"
+            android:layout_gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="요청하기"
+            android:textColor="@color/brown"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1"
+        android:gravity="bottom"
+        >
+
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/main_bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:menu="@menu/bottom_navigation_menu" />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

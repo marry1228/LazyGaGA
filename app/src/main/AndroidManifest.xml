@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.aoslec.haezzo">
+    <!-- 인터넷 권한 선언: 톰캣 연결시 사용 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" /> <!-- kakao map 사용 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:name=".ActivityLogin.CustomApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/haezzologo"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Haezzo"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".ActivityDocument.DocumentDoingDetailsActivity" />
+        <activity android:name=".ActivityDocument.DocumentDoneDetailsActivity" />
+        <activity android:name=".ActivityDocument.DocumentWaitingDetailsActivity" />
+        <activity android:name=".ActivityDocument.DocumentWriteActivity" />
+        <activity android:name=".ActivityDocument.HaezulgaeDocumentDetailsActivity" />
+        <activity android:name=".ActivityDocument.HaezulgaeListActivity" />
+        <activity android:name=".ActivityHelperApply.HelperApplyAccountActivity" />
+        <activity android:name=".ActivityHelperApply.HelperApplyFinalActivity" />
+        <activity android:name=".ActivityHelperApply.HelperApplyIdCardActivity" />
+        <activity android:name=".ActivityHelperApply.HelperApplyIntroActivity" />
+        <activity android:name=".ActivityHelperApply.HelperApplyProfileActivity" />
+        <activity android:name=".ActivityHelperApply.HelperApplyProfileImageActivity" />
+        <activity android:name=".ActivityLogin.GetDBDataActivity" />
+        <activity android:name=".ActivityLogin.KakaoLoginActivity" />
+        <activity android:name=".ActivityLogin.KakaoLoginMapInsertActivity" />
+        <activity android:name=".ActivityLogin.KakaoLoginSubActivity" />
+        <activity android:name=".ActivityOnDealList.OnDealListActivity" />
+        <activity android:name=".ActivityPayment.Pay1Activity" />
+        <activity android:name=".ActivityPayment.Pay2Activity" />
+        <activity android:name=".ActivityUserHelper.HelperListActivity" />
+        <activity android:name=".ActivityUserHelper.MypageActivity" />
+        <activity android:name=".ActivityUserHelper.MypageFixActivity" />
+
+        <activity android:name=".SplashActivity">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity" />
+
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="c31000113be684c60e864f48656b3f31" />
+    </application>
+
+</manifest>

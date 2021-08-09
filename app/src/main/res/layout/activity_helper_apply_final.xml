@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityHelperApply.HelperApplyFinalActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="프로필 확인"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="12"
+        android:layout_margin="10dp"
+        >
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            >
+            <ImageView
+                android:id="@+id/iv_hprofileimage3"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ic_launcher_foreground"
+                android:layout_margin="10dp"
+                />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="닉네임"
+                    android:gravity="center"
+                    android:layout_margin="10dp"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="나이, 성별"
+                    android:gravity="center"
+                    android:layout_margin="10dp"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="지역"
+                    android:gravity="center"
+                    android:layout_margin="10dp"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_margin="10dp"
+            android:layout_weight="3"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="자기소개"
+                android:layout_margin="10dp"
+                />
+            <TextView
+                android:id="@+id/tv_hself"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="15"
+                android:scrollbars="vertical"
+                android:scrollHorizontally="false"
+                android:text="소개글"
+                android:layout_margin="10dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="설치/수리 가능항목"
+                android:layout_margin="10dp"
+                />
+            <TextView
+                android:id="@+id/tv_hgaga"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="가전 or 가구 or 가전/가구"
+                android:layout_margin="10dp"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:layout_margin="10dp"
+        >
+        <Button
+            android:id="@+id/btn_helper_apply_final_back"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="이전단계"
+            android:layout_marginRight="20dp"
+            />
+        <Button
+            android:id="@+id/btn_helper_apply_final_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="최종\n지원하기"
+            />
+        <Button
+            android:id="@+id/btn_helper_apply_final_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="지원취소"
+            android:layout_marginLeft="20dp"
+            />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

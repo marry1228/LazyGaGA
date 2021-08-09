@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityHelperApply.HelperApplyProfileImageActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="프로필 사진"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="12"
+        android:layout_margin="10dp"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="프로필 사진 업로드"
+            android:gravity="center"
+            android:layout_margin="10dp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="정면 사진을 올려주세요."
+            android:gravity="center"
+            android:layout_margin="10dp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="모자나 선글라스는 피해주세요."
+            android:gravity="center"
+            android:layout_margin="10dp"
+            />
+        <ImageView
+            android:id="@+id/iv_hprofileimage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/ic_launcher_foreground"
+            android:layout_margin="10dp"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:layout_margin="10dp"
+        >
+        <Button
+            android:id="@+id/btn_helper_apply_profileimage_back"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="이전단계"
+            android:layout_marginRight="20dp"
+            />
+        <Button
+            android:id="@+id/btn_helper_apply_profileimage_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="저장하고\n다음단계"
+            />
+        <Button
+            android:id="@+id/btn_helper_apply_profileimage_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="지원취소"
+            android:layout_marginLeft="20dp"
+            />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="dpay_category">
+
+        <item>카카오페이</item>
+        <item>현금결제</item>
+
+    </string-array>
+
+</resources>
