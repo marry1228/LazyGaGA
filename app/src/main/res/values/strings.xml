@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Haezzo</string>
+    <string name="tab_label_1">Home</string>
+    <string name="tab_label_2">List</string>
+    <string name="tab_label_3">My page</string>
+    <string name="page_title">해쭤</string>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="gaga">
+        <item>가전</item>
+        <item>가구</item>
+        <item>가전/가구</item>
+
+
+    </string-array>
+
+
+</resources>
