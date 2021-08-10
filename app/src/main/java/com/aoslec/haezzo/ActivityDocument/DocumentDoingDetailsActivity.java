@@ -1,5 +1,6 @@
 package com.aoslec.haezzo.ActivityDocument;
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,16 +17,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.aoslec.haezzo.ActivityOnDealList.OnDealListActivity;
 import com.aoslec.haezzo.Bean.DocumentBean;
 import com.aoslec.haezzo.NetworkTask.DocumentNetworkTask;
+import com.aoslec.haezzo.NetworkTask.OnDealListNetworkTask;
 import com.aoslec.haezzo.R;
 import com.aoslec.haezzo.ShareVar;
 import com.bumptech.glide.Glide;
+import com.kakao.network.NetworkTask;
 
 import java.util.ArrayList;
 
 public class DocumentDoingDetailsActivity extends AppCompatActivity {
 
     String urlAddr = null;
-    String macIP = ShareVar.macIP;
     ArrayList<DocumentBean> documentBeans;
     Intent intent= null;
     String dnumber = null;
@@ -34,9 +37,12 @@ public class DocumentDoingDetailsActivity extends AppCompatActivity {
     //TextView 들
     TextView DdoingDetails_tvDgaga,DdoingDetails_tvDproducts,DdoingDetails_tvDtitle, DdoingDetails_tvDcontent, DdoingDetails_tvDdate, DdoingDetails_tvDtime,
             DdoingDetails_tvDplace, DdoingDetails_tvDmoney, DdoingDetails_tvDpay;
-
+    // 버튼 ,이미지
     Button DdoingDetails_btnDcomplete;
     ImageView DdoingDetails_ivDimage;
+
+    //진행중 상태수정 jsp 연결
+    String subUrl_update = "dstatusUpdate.jsp?";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,6 +113,8 @@ public class DocumentDoingDetailsActivity extends AppCompatActivity {
 
         Glide.with(this)
                 .load(ShareVar.urlAddr + documentBeans.get((Integer.parseInt(dnumber))-1).getDimage())
+                .override(300,200)
+                .centerCrop()
                 .into(DdoingDetails_ivDimage);
 
     }//showDetails
@@ -126,13 +134,22 @@ public class DocumentDoingDetailsActivity extends AppCompatActivity {
                             .setPositiveButton("예", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
-                                    Intent intent = new Intent(DocumentDoingDetailsActivity.this, OnDealListActivity.class);
+                                    //Intent intent = new Intent(DocumentDoingDetailsActivity.this, OnDealListActivity.class);
+                                    intent = getIntent();
                                     dnumber = intent.getStringExtra("dnumber");
-                                    dstatus = intent.getStringExtra("dstatus");
-                                    intent.putExtra("dnumber",dnumber);
                                     //거래완료 누르면 dstatus가 거래완료! 상태로 변경 되어야 함
+                                    //수정 jsp 연결
+                                    urlAddr = ShareVar.urlAddr + subUrl_update + "dnumber=" + dnumber + "&dstatus=거래완료";
+                                    Log.v("Message","urlAddr: doingDetails update" + urlAddr);
                                     ShareVar.Document_dstatus = "거래완료";
-                                    startActivity(intent);
+                                    String result = connectUpdateData();//여기에 return값 줄거임
+                                    if(result.equals("1")){
+                                        Toast.makeText(DocumentDoingDetailsActivity.this, "거래완료로 변경되었습니다.", Toast.LENGTH_SHORT).show();
+                                    }else{
+                                        Toast.makeText(DocumentDoingDetailsActivity.this, "변경이 실패하였습니다.", Toast.LENGTH_SHORT).show();
+                                    }
+                                    finish();// back 버튼 누른거랑 같음 (=main화면으로 감)
+                                    //startActivity(intent);
                                 }
                             })
                             .show();
@@ -141,6 +158,25 @@ public class DocumentDoingDetailsActivity extends AppCompatActivity {
 
         } // onClick
     }; //onClickListener
+
+    private String connectUpdateData(){
+        Log.v("Message", "METHOD : connectUpdateData Start");
+        String result = null;
+        try {
+            DocumentNetworkTask documentNetworkTask = new DocumentNetworkTask(DocumentDoingDetailsActivity.this, urlAddr, "update");
+            Object obj = documentNetworkTask.execute().get();
+            result = (String) obj;
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        Log.v("Message", "End of METHOD // result : " + result);
+        return result;
+    }//update
+
+
+
+
+
 
 
 }//------

@@ -3,7 +3,7 @@ package com.aoslec.haezzo;
 public class ShareVar {
 
     // 공용 IP, Tomcat 주소
-    public static String macIP = "172.30.42.235";
+    public static String macIP = "192.168.134.130";
     public static String urlAddr = "http://" + macIP + ":8080/test/Haezzo/";
 
     // 헬퍼 최종 지원 전 임시 값 저장

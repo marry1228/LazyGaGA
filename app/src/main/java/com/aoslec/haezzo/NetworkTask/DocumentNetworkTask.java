@@ -124,7 +124,7 @@ public class DocumentNetworkTask extends AsyncTask<Integer,String,Object> {
         if(where.equals("select")){
             return documentBeans; // select는 엄청 많은 값이 들어올거임
         }else{
-            return  result; //insert, update, delete는 잘했다 못했다만 넘어 올거고
+            return result; //insert, update, delete는 잘했다 못했다만 넘어 올거고
         }
     }//doinback
 
@@ -165,11 +165,12 @@ public class DocumentNetworkTask extends AsyncTask<Integer,String,Object> {
                 String dplace = jsonObject1.getString("dplace");
                 String dmoney = jsonObject1.getString("dmoney");
                 String dpay = jsonObject1.getString("dpay");
+                String dstatus = jsonObject1.getString("dstatus");
                 String unumber = jsonObject1.getString("unumber");
                 String hnumber = jsonObject1.getString("hnumber");
                 Log.v("Message","dnumber:" + dnumber + "dgaga :" + dgaga);
                 //어레이에 있는거 뽑아와서 빈
-                DocumentBean documentBean = new DocumentBean(dnumber,dgaga,dproduct,dtitle,dimage,dcontent,ddate,dtime,dplace,dmoney,dpay,unumber,hnumber);
+                DocumentBean documentBean = new DocumentBean(dnumber,dgaga,dproduct,dtitle,dimage,dcontent,ddate,dtime,dplace,dmoney,dpay,dstatus,unumber,hnumber);
                 documentBeans.add(documentBean);
                 //members는 어레이리스트, member는 빈
                 //--->for문 돌면서 차곡차곡 쌓기

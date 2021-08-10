@@ -148,9 +148,8 @@ public class OnDealListNetworkTask extends AsyncTask<Integer, String, Object> {
         String returnValue = null;
         try{
             JSONObject jsonObject = new JSONObject(str);
-            jsonObject.getString("result");
             // 입력이 잘 됐다고 하면 {"result" : "1"} 이 뜰 것이고, 오류면 {"result" : "0"}이 넘어옴.
-            returnValue = jsonObject.getString("null");
+            returnValue = jsonObject.getString("result");
 
         }catch (Exception e){
             e.printStackTrace();

@@ -12,12 +12,13 @@ public class DocumentBean {
     private String dplace;
     private String dmoney;
     private String dpay;
+    private String dstatus;
     private String unumber;
     private String hnumber;
 
     //---------------------Constructor
 
-    public DocumentBean(String dnumber, String dgaga, String dproduct, String dtitle, String dimage, String dcontent, String ddate, String dtime, String dplace, String dmoney, String dpay, String unumber, String hnumber) {
+    public DocumentBean(String dnumber, String dgaga, String dproduct, String dtitle, String dimage, String dcontent, String ddate, String dtime, String dplace, String dmoney, String dpay, String dstatus, String unumber, String hnumber) {
         this.dnumber = dnumber;
         this.dgaga = dgaga;
         this.dproduct = dproduct;
@@ -29,6 +30,7 @@ public class DocumentBean {
         this.dplace = dplace;
         this.dmoney = dmoney;
         this.dpay = dpay;
+        this.dstatus = dstatus;
         this.unumber = unumber;
         this.hnumber = hnumber;
     }
@@ -123,6 +125,14 @@ public class DocumentBean {
 
     public void setDpay(String dpay) {
         this.dpay = dpay;
+    }
+
+    public String getDstatus() {
+        return dstatus;
+    }
+
+    public void setDstatus(String dstatus) {
+        this.dstatus = dstatus;
     }
 
     public String getUnumber() {
