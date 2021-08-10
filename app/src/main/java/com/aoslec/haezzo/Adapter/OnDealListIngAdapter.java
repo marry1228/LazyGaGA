@@ -103,6 +103,8 @@ public class OnDealListIngAdapter extends RecyclerView.Adapter<OnDealListIngAdap
 
         Glide.with(mContext)
                 .load(ShareVar.urlAddr + data.get(position).getDimage())
+                .override(300,200)
+                .centerCrop()
                 .into(holder.myhaezzoList_ivDimg);
 
     }
