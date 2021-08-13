@@ -59,7 +59,7 @@ public class DocumentDoingDetailsActivity extends AppCompatActivity {
         DdoingDetails_tvDtitle = findViewById(R.id.DdoingDetails_tvDtitle);
         DdoingDetails_tvDcontent = findViewById(R.id.DdoingDetails_tvDcontent);
         DdoingDetails_tvDdate = findViewById(R.id.DdoingDetails_tvDdate);
-        DdoingDetails_tvDtime = findViewById(R.id.DdoingDetails_tvDdate);
+        DdoingDetails_tvDtime = findViewById(R.id.DdoingDetails_tvDtime);
         DdoingDetails_tvDplace = findViewById(R.id.DdoingDetails_tvDplace);
         DdoingDetails_tvDmoney = findViewById(R.id.DdoingDetails_tvDmoney);
         DdoingDetails_tvDpay = findViewById(R.id.DdoingDetails_tvDpay);
