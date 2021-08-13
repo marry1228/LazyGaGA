@@ -32,15 +32,13 @@ import java.util.ArrayList;
 public class DocumentWaitingDetailsActivity extends AppCompatActivity {
 
     String urlAddr = null;
-    String macIP = ShareVar.macIP;
     //수정 부분
     String subUrl_update = null;
     //String subUrl_delete = null;
     String dnumber = null;
 
     ArrayAdapter<CharSequence> adapter2 = null;
-
-
+    //Bean
     ArrayList<DocumentBean> documentBeans;
     Intent intent= null;
 
@@ -203,31 +201,31 @@ public class DocumentWaitingDetailsActivity extends AppCompatActivity {
             switch (v.getId()){
 
                 case R.id.DwaitingDetails_btnDmodify:
-                    intent = getIntent();
-                    dnumber =intent.getStringExtra("dnumber");
-                    Log.v("Message","dnumber는 어떻게 들어옵니까"+dnumber);
-
-                    //화면에 입력된 값 가져오기
-                    sDgaga = DwaitingDetails_tvDgaga.getText().toString();
-                    sDproduct = Dproducts.getSelectedItem().toString();
-                    sDtitle = DwaitingDetails_etDtitle.getText().toString();
-                    sDcontent = DwaitingDetails_etDcontent.getText().toString();
-                    resultdpDate = String.format("%d-%d-%d", dpDate.getYear(), dpDate.getMonth()+1, dpDate.getDayOfMonth()); // 월에 주의!
-
-                    sDplace = DwaitingDetails_tvDplace.getText().toString();
-                    sDmoney = DwaitingDetails_etDmoney.getText().toString();
-
-
-                    urlAddr = ShareVar.urlAddr + subUrl_update +"dgaga="+ sDgaga + "&dproduct=" + sDproduct + "&dtitle=" + sDtitle + "&dcontent=" + sDcontent
-                            + "&ddate=" + resultdpDate + "&dtime=" + tpTime + "&dplace=" + sDplace + "&dmoney=" + sDmoney + "&dpay=" + sDpay
-                            + "&dnumber=" + dnumber;
-
-                    String result_up = connectUpdateData();
-
-                    //토스트 띄우기
-                    Toast.makeText(DocumentWaitingDetailsActivity.this, "글이 수정되었습니다.", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(DocumentWaitingDetailsActivity.this, MainActivity.class);
-                    startActivity(intent);
+//                    intent = getIntent();
+//                    dnumber =intent.getStringExtra("dnumber");
+//                    Log.v("Message","dnumber는 어떻게 들어옵니까"+dnumber);
+//
+//                    //화면에 입력된 값 가져오기
+//                    sDgaga = DwaitingDetails_tvDgaga.getText().toString();
+//                    sDproduct = Dproducts.getSelectedItem().toString();
+//                    sDtitle = DwaitingDetails_etDtitle.getText().toString();
+//                    sDcontent = DwaitingDetails_etDcontent.getText().toString();
+//                    resultdpDate = String.format("%d-%d-%d", dpDate.getYear(), dpDate.getMonth()+1, dpDate.getDayOfMonth()); // 월에 주의!
+//
+//                    sDplace = DwaitingDetails_tvDplace.getText().toString();
+//                    sDmoney = DwaitingDetails_etDmoney.getText().toString();
+//
+//
+//                    urlAddr = ShareVar.urlAddr + subUrl_update +"dgaga="+ sDgaga + "&dproduct=" + sDproduct + "&dtitle=" + sDtitle + "&dcontent=" + sDcontent
+//                            + "&ddate=" + resultdpDate + "&dtime=" + tpTime + "&dplace=" + sDplace + "&dmoney=" + sDmoney + "&dpay=" + sDpay
+//                            + "&dnumber=" + dnumber;
+//
+//                    String result_up = connectUpdateData();
+//
+//                    //토스트 띄우기
+//                    Toast.makeText(DocumentWaitingDetailsActivity.this, "글이 수정되었습니다.", Toast.LENGTH_SHORT).show();
+//                    Intent intent = new Intent(DocumentWaitingDetailsActivity.this, MainActivity.class);
+//                    startActivity(intent);
                     break;
 
                 case R.id.DwaitingDetails_btnFurniture:

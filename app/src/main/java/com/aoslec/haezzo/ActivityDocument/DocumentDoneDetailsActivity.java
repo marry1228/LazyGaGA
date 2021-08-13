@@ -41,7 +41,7 @@ public class DocumentDoneDetailsActivity extends AppCompatActivity {
         DdoneDetails_tvDtitle = findViewById(R.id.DdoneDetails_tvDtitle);
         DdoneDetails_tvDcontent = findViewById(R.id.DdoneDetails_tvDcontent);
         DdoneDetails_tvDdate = findViewById(R.id.DdoneDetails_tvDdate);
-        DdoneDetails_tvDtime = findViewById(R.id.DdoneDetails_tvDdate);
+        DdoneDetails_tvDtime = findViewById(R.id.DdoneDetails_tvDtime);
         DdoneDetails_tvDplace = findViewById(R.id.DdoneDetails_tvDplace);
         DdoneDetails_tvDmoney = findViewById(R.id.DdoneDetails_tvDmoney);
         DdoneDetails_tvDpay = findViewById(R.id.DdoneDetails_tvDpay);
@@ -94,6 +94,8 @@ public class DocumentDoneDetailsActivity extends AppCompatActivity {
 
         Glide.with(this)
                 .load(ShareVar.urlAddr + documentBeans.get((Integer.parseInt(dnumber))-1).getDimage())
+                .override(300,200)
+                .centerCrop()
                 .into(DdoneDetails_ivDimage);
 
     }//showDetails

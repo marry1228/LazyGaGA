@@ -100,6 +100,8 @@ public class OnDealListDoneAdapter extends RecyclerView.Adapter<OnDealListDoneAd
 
         Glide.with(mContext)
                 .load(ShareVar.urlAddr + data.get(position).getDimage())
+                .override(300,200)
+                .centerCrop()
                 .into(holder.myhaezzoListDone_ivDimg);
 
     }
